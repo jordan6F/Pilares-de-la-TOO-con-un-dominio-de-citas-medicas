@@ -1,0 +1,18 @@
+package citas2902082.entites.enums;
+
+public enum Especialidades {
+
+    OCTAMOLOGO,
+    PEDIATRIA,
+    CARDIOLOGIA,
+    ONCOLOGIA,
+    MEDICINA_GENERAL,
+    GINECOLOGO,
+    DERMATOLOGIA,
+    HEMATOLOGIA,
+    OFTALMOLOGIA,
+    NEUMOLOGIA,
+    OTORRINLARINGOLOGIA
+
+
+}
