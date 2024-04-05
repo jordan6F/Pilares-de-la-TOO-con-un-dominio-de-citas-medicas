@@ -8,9 +8,17 @@ public class Consultorio {
 
     public Integer numero;
 
-    public Consultorio(String direccion, Integer numero) {
+    public Consultorio(Integer id, String direccion, long l) {
+
+        this.id=id;
         this.direccion = direccion;
         this.numero = numero;
+    }
+
+    @Override
+    public String toString() {
+        return "Consultorio [id=" + id + ", direccion=" + direccion + ", numero=" + numero + "]";
     }  
 
+    
 }

@@ -2,16 +2,20 @@ package citas2902082.entites;
 
 import java.time.LocalDateTime;
 
-public class citaEnfermero extends Cita {
+public class citaEnfermero extends Cita implements IAgendable {
 
-       private String procedimiento;
-       private Enfermeros enfermeros;
+       public String procedimiento;
+       public Enfermeros enfermeros;
 
-    public citaEnfermero(LocalDateTime fecha, Paciente paciente, String procedimiento, Enfermeros enfermeros) {
-        super(fecha, paciente);
+   
+
+    public citaEnfermero(Integer id, LocalDateTime fecha, Paciente paciente, String procedimiento,
+            Enfermeros enfermeros) {
+        super(id, fecha, paciente);
         this.procedimiento = procedimiento;
         this.enfermeros = enfermeros;
     }
+
 
     public String getProcedimiento() {
         return procedimiento;
@@ -27,6 +31,24 @@ public class citaEnfermero extends Cita {
 
     public void setEnfermeros(Enfermeros enfermeros) {
         this.enfermeros = enfermeros;
+    }
+
+
+    @Override
+    public void agendarCita(LocalDateTime fecha) {
+       super.setFecha(fecha);
+    }
+
+
+    @Override
+    public void cancelarCita() {
+      System.out.println("CITA DE ENFERMERIA CANCELADA");
+    }
+
+    @Override
+    public void reagendarCita(LocalDateTime fecha) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'reagendarCita'");
     }
 
     

@@ -6,18 +6,37 @@ import citas2902082.entites.enums.EstadoCita;
 
 public class citaMedico extends Cita implements IAgendable {
 
-    private String motivo;
-    private Medico medico;
-    private EstadoCita estado;
+    public String motivo;
+    public Medico medico;
+    public EstadoCita estado;
 
-    public citaMedico(LocalDateTime fecha,
+    public citaMedico(Integer id,
+        LocalDateTime fecha,
                       Paciente paciente,
                       String motivo,
-                      Medico medico) {
-        super(fecha, paciente);
+                      Medico medico, 
+                      Consultorio consultorio,
+                      EstadoCita estado) {
+                        
+        super( id, fecha, paciente);
         this.motivo = motivo;
         this.medico = medico;
+        this.estado = estado;
     }
+
+    
+
+
+
+
+
+    @Override
+    public String toString() {
+        return "citaMedico [motivo=" + motivo + ", medico=" + medico + ", estado=" + estado + ", getfecha()=" + getFecha() + ", getMotivo()=" + getMotivo() + ", Paciente()=" +
+        getPaciente() + "nombre :" + getPaciente().nombres + "apellido :" + getPaciente().apellidos + ",getMedico" + "Consultorio :" + getConsultorio() + "Estado :" + getEstado() + "]";
+    }
+
+
 
     public String getMotivo() {
         return motivo;
@@ -53,6 +72,17 @@ public class citaMedico extends Cita implements IAgendable {
         super.setFecha(fecha);
     }
 
-    
 
+
+    public EstadoCita getEstado() {
+        return estado;
+    }
+
+
+
+    public void setEstado(EstadoCita estado) {
+        this.estado = estado;
+    }
+
+    
 }
